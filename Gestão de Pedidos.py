@@ -1,22 +1,22 @@
 def cadastrar_mesa(mesas):
-    """Cadastra uma nova mesa."""
+    # Cadastrando uma nova mesa, 'mesas' é onde está armazenado as informações sobre elas
     numero = int(input("Número da mesa: "))
     capacidade = int(input("Capacidade da mesa (Até 4 pessoas): "))
     mesas[numero] = {
-        "capacidade": capacidade,
-        "status": "livre",
+        "capacidade": capacidade, # Capacidade de pessoas na mesa
+        "status": "livre", # Se está livre, ocupada ou reservada
         "pedidos": []
     }
     print("Mesa cadastrada com sucesso!")
 
 def visualizar_mesas(mesas):
-    """Visualiza o status das mesas."""
+    # def para que consigamos ver o status da mesa, se está disponível ou não
     print("Status das mesas:")
     for numero, mesa in mesas.items():
         print(f"- Mesa {numero}: Capacidade {mesa['capacidade']}, Status: {mesa['status']}")
 
 def atribuir_clientes_mesa(mesas):
-    """Atribui clientes a uma mesa."""
+    # def para adicionar clientes na mesa
     numero_mesa = int(input("Número da mesa: "))
     if numero_mesa not in mesas:
         print("Mesa não encontrada.")
@@ -28,7 +28,7 @@ def atribuir_clientes_mesa(mesas):
     print("Clientes atribuídos à mesa.")
 
 def registrar_pedido(mesas, cardapio):
-    """Registra um pedido para uma mesa."""
+    # def para registrar o pedido na mesa, o 'cardápio é onde está armazenado as comidas e bebidas
     numero_mesa = int(input("Número da mesa: "))
     if numero_mesa not in mesas:
         print("Mesa não encontrada.")
@@ -45,7 +45,7 @@ def registrar_pedido(mesas, cardapio):
     print("Pedido registrado com sucesso!")
 
 def visualizar_pedido(mesas):
-    """Visualiza os pedidos de uma mesa."""
+    # def para visualizar os pedidos da mesa
     numero_mesa = int(input("Número da mesa: "))
     if numero_mesa not in mesas:
         print("Mesa não encontrada.")
