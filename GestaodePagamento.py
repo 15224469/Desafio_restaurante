@@ -1,10 +1,12 @@
 def calcular_conta_mesa(mesas, cardapio):
     # def para calcular a conta total de uma mesa
     numero_mesa = int(input("Número da mesa: "))
+
     if numero_mesa not in mesas:
         print("Mesa não encontrada.")
         return
     total = 0
+
     for pedido in mesas[numero_mesa]["pedidos"]:
         total += cardapio[pedido["item"]]["preco"] * pedido["quantidade"]
     print(f"Total da conta da Mesa {numero_mesa}: R$ {total:.2f}")
@@ -29,13 +31,17 @@ def registrar_pagamento(mesas, numero_mesa, total_com_desconto):
     # 'numero_mesa' é o número da mesa que o cliente está pagando.
     # 'total_com_desconto' é o valor total da conta com a taxa de serviço.
     forma_pagamento = input("Forma de pagamento (dinheiro ou cartão): ")
+
     if forma_pagamento.lower() == "dinheiro":
         valor_pago = float(input("Valor pago: "))
         troco = valor_pago - total_com_desconto
+
         if troco > 0:
             print(f"Troco: R$ {troco:.2f}")
+
         else:
             print("Pagamento recebido.")
+            
     else:
         print("Pagamento registrado.")
     mesas[numero_mesa]["status"] = "livre"

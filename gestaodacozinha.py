@@ -1,33 +1,6 @@
-estoque = {
-    "massa para pastel": 100,
-    "óleo de soja": 5000,  
-    "sal": 500,  
-    "alho": 50,
-    "cebola": 30,
-    "carne moída": 3000, 
-    "frango desfiado": 3000,
-    "presunto": 2000,
-    "queijo mussarela": 2000,
-    "calabresa": 2000,
-    "bacon": 2000,
-    "ovo de codorna": 100,
-    "milho verde": 1000,
-    "ervilha": 1000,
-    "tomate": 50,
-    "azeitona": 200,
-    "catupiry": 1000
-}
-
-bebidas = {
-    "água mineral": 20,
-    "coca-cola": 20,
-    "sprite": 20,
-    "pepsi": 20,
-    "guaraná antartica": 20
-}
+import estoque
 
 cardapio = {}
-
 fila_pedidos = []
 
 def cadastrar_item(nome, descricao, preco, ingredientes):
@@ -136,7 +109,7 @@ if __name__ == "__main__":
     atualizar_status_pedido(0, "Em preparo")
     atualizar_status_pedido(0, "Pronto para servir")
 
-    mostrar_fila()estoque = {
+    mostrar_fila() estoque == {
     "massa para pastel": 100,
     "óleo de soja": 5000,  
     "sal": 500,  
