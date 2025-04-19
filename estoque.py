@@ -58,18 +58,18 @@ def cadastrar_produto_estoque():
             'validade': validade_date
         }
 
-        print("✅ Produto cadastrado com sucesso!")
+        print(" Produto cadastrado com sucesso!")
 
     except ValueError:
-        print("❌ Erro nos dados inseridos. Tente novamente.")
+        print(" Erro nos dados inseridos. Tente novamente.")
 
 # Consultar produtos com alertas
 def consultar_estoque():
-    print("\n📦 ESTOQUE:")
+    print("\n ESTOQUE:")
     for codigo, produto in estoque.items():
         dias_restantes = (produto['validade'] - datetime.today().date()).days
-        alerta_validade = "⚠️ Vencimento próximo" if dias_restantes < 5 else ""
-        alerta_quantidade = "⚠️ Estoque baixo" if produto['quantidade'] < 5 else ""
+        alerta_validade = "Vencimento próximo" if dias_restantes < 5 else ""
+        alerta_quantidade = " Estoque baixo" if produto['quantidade'] < 5 else ""
         print(f"{codigo} - {produto['nome']} ({produto['quantidade']} {produto['unidade']}) - R${produto['Valor_Unitario']:.2f} - Venc: {produto['validade']} {alerta_validade} {alerta_quantidade}")
 
 # Atualizar produto específico
@@ -82,8 +82,8 @@ def atualizar_estoque(codigo, campo, novo_valor):
             novo_valor = float(novo_valor)
 
         estoque[codigo][campo] = novo_valor
-        print("✅ Produto atualizado com sucesso.")
+        print(" Produto atualizado com sucesso.")
     else:
-        print("❌ Produto não encontrado no estoque.")
+        print(" Produto não encontrado no estoque.")
 
     atualizar_estoque(codigo, campo, novo_valor)
